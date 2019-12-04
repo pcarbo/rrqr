@@ -1,2 +1,4 @@
 # rrqr
-Toy R package implementing the rank-revealing QR decomposition using RcppEigen.
+
+Toy R package implementing the rank-revealing QR factorization  using
+RcppEigen.

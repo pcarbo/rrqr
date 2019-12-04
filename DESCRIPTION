@@ -1,0 +1,17 @@
+Encoding: UTF-8
+Package: rrqr
+Type: Package
+Title: Rank-revealing QR Factorization
+Version: 0.1-0
+Date: 2019-12-04
+Authors@R: person("Peter","Carbonetto",role=c("aut","cre"),
+                  email="peter.carbonetto@gmail.com")
+Description: Toy R package implementing the rank-revealing QR
+    factorization using RcppEigen.
+License: MIT + file LICENSE
+URL: https://github.com/pcarbo/rrqr
+BugReports: https://github.com/pcarbo/rrqr/issues
+Imports: Rcpp (>= 1.0.1)
+LinkingTo: Rcpp, RcppEigen
+NeedsCompilation: yes
+RoxygenNote: 6.1.1
