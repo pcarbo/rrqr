@@ -23,7 +23,7 @@ List rrqr_rcpp (const NumericMatrix& x, double tol) {
   //
   // where P a the permutation matrix.
   const MapMatrixXd X(as<MapMatrixXd>(x));
-  FullPivHouseholderQR<MatrixXd> qr(X);
+  ColPivHouseholderQR<MatrixXd> qr(X);
 
   // Return the Q and R factors of the truncated decomposition. The
   // rank is determined by the number of nonzero pivots.
