@@ -2,8 +2,8 @@ Encoding: UTF-8
 Package: rrqr
 Type: Package
 Title: Rank-revealing QR Factorization
-Version: 0.1-1
-Date: 2019-12-04
+Version: 0.1-2
+Date: 2019-12-09
 Authors@R: person("Peter","Carbonetto",role=c("aut","cre"),
                   email="peter.carbonetto@gmail.com")
 Description: Toy R package implementing the rank-revealing QR

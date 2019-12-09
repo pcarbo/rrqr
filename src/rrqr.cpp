@@ -8,6 +8,16 @@
 using namespace Rcpp;
 using namespace Eigen;
 
+typedef Map<MatrixXd> MapMatd;
+
+// [[Rcpp::export]]
+double rrqr_rcpp (NumericMatrix X) {
+  const MapMatd Y(as<MapMatd>(X));
+  FullPivHouseholderQR<MatrixXd> qr(Y);
+  qr.setThreshold(1e-8);
+  return (double) qr.rank();
+}
+
 // [[Rcpp::export]]
 Eigen::MatrixXd rcppeigen_hello_world() {
   MatrixXd m1 = MatrixXd::Identity(3,3);

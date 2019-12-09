@@ -6,6 +6,17 @@
 
 using namespace Rcpp;
 
+// rrqr_rcpp
+double rrqr_rcpp(NumericMatrix X);
+RcppExport SEXP _rrqr_rrqr_rcpp(SEXP XSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type X(XSEXP);
+    rcpp_result_gen = Rcpp::wrap(rrqr_rcpp(X));
+    return rcpp_result_gen;
+END_RCPP
+}
 // rcppeigen_hello_world
 Eigen::MatrixXd rcppeigen_hello_world();
 RcppExport SEXP _rrqr_rcppeigen_hello_world() {
@@ -51,6 +62,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_rrqr_rrqr_rcpp", (DL_FUNC) &_rrqr_rrqr_rcpp, 1},
     {"_rrqr_rcppeigen_hello_world", (DL_FUNC) &_rrqr_rcppeigen_hello_world, 0},
     {"_rrqr_rcppeigen_outerproduct", (DL_FUNC) &_rrqr_rcppeigen_outerproduct, 1},
     {"_rrqr_rcppeigen_innerproduct", (DL_FUNC) &_rrqr_rcppeigen_innerproduct, 1},
