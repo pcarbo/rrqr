@@ -4,6 +4,8 @@
 #'
 #' @param X Describe parameter here.
 #'
+#' @param tol Describe parameter here.
+#' 
 #' @examples
 #'
 #' set.seed(1)
@@ -16,6 +18,5 @@
 #' 
 #' @export
 #' 
-rrqr <- function (X) {
-  rrqr_rcpp(X)
-}
+rrqr <- function (X, tol = 1e-8)
+  rrqr_rcpp(X,tol)

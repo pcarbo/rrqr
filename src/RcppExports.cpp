@@ -7,19 +7,20 @@
 using namespace Rcpp;
 
 // rrqr_rcpp
-List rrqr_rcpp(const NumericMatrix& x);
-RcppExport SEXP _rrqr_rrqr_rcpp(SEXP xSEXP) {
+List rrqr_rcpp(const NumericMatrix& x, double tol);
+RcppExport SEXP _rrqr_rrqr_rcpp(SEXP xSEXP, SEXP tolSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const NumericMatrix& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rrqr_rcpp(x));
+    Rcpp::traits::input_parameter< double >::type tol(tolSEXP);
+    rcpp_result_gen = Rcpp::wrap(rrqr_rcpp(x, tol));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_rrqr_rrqr_rcpp", (DL_FUNC) &_rrqr_rrqr_rcpp, 1},
+    {"_rrqr_rrqr_rcpp", (DL_FUNC) &_rrqr_rrqr_rcpp, 2},
     {NULL, NULL, 0}
 };
 

@@ -4,10 +4,12 @@
 \alias{rrqr}
 \title{Add title here.}
 \usage{
-rrqr(X)
+rrqr(X, tol = 1e-08)
 }
 \arguments{
 \item{X}{Describe parameter here.}
+
+\item{tol}{Describe parameter here.}
 }
 \description{
 Add description here.

@@ -15,10 +15,10 @@ typedef Map<MatrixXd> MapMatrixXd;
 // TO DO: Explain briefly what this function  does.
 // 
 // [[Rcpp::export]]
-List rrqr_rcpp (const NumericMatrix& x) {
+List rrqr_rcpp (const NumericMatrix& x, double tol) {
   const MapMatrixXd X(as<MapMatrixXd>(x));
   FullPivHouseholderQR<MatrixXd> qr(X);
-  qr.setThreshold(1e-8);
+  qr.setThreshold(tol);
   double   k = (double) qr.rank();
   MatrixXd R = qr.matrixQR().triangularView<Upper>();
   MatrixXd Q = qr.matrixQ();
