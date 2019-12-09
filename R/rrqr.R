@@ -14,7 +14,6 @@
 #'   estimated numerical rank of \code{X}.
 #' 
 #' @examples
-#'
 #' # Generate a 10 x 5 matrix that effectively has a rank of 3.
 #' set.seed(1)
 #' x <- matrix(rnorm(30),3,10)

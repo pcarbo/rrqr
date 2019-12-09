@@ -23,7 +23,6 @@ rank-revealing QR factorization with column-pivoting as implemented
 in the Eigen library.
 }
 \examples{
-
 # Generate a 10 x 5 matrix that effectively has a rank of 3.
 set.seed(1)
 x <- matrix(rnorm(30),3,10)
