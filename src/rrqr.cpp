@@ -25,10 +25,14 @@ List rrqr_rcpp (const NumericMatrix& x, double tol) {
   const MapMatrixXd X(as<MapMatrixXd>(x));
   ColPivHouseholderQR<MatrixXd> qr(X);
 
-  // Return the Q and R factors of the truncated decomposition. The
-  // rank is determined by the number of nonzero pivots.
+  // Get the rank of the truncated QR decomposition. It is determined
+  // by the number of nonzero pivots.
   qr.setThreshold(tol);
-  int      k = qr.rank();
+  int k = qr.matrixQ().cols();
+  if (tol > 0)
+    k = qr.rank();
+  
+  // Return the Q and R factors of the truncated decomposition. 
   MatrixXd R = qr.matrixQR().triangularView<Upper>();
   MatrixXd Q = qr.matrixQ();
   R *= qr.colsPermutation().inverse();
