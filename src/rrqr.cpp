@@ -12,12 +12,18 @@ typedef Map<MatrixXd> MapMatrixXd;
 
 // FUNCTION DEFININTIONS
 // ---------------------
-// TO DO: Explain briefly what this function  does.
+// This is the C++ backend to the rrqr function.
 // 
 // [[Rcpp::export]]
 List rrqr_rcpp (const NumericMatrix& x, double tol) {
+
+  // Compute a QR factorization of matrix X.
   const MapMatrixXd X(as<MapMatrixXd>(x));
   FullPivHouseholderQR<MatrixXd> qr(X);
+
+  // Return the factors Q and R in the truncated (low-rank) QR
+  // decomposition. The rank is determined by the number of nonzero
+  // pivots.
   qr.setThreshold(tol);
   double   k = (double) qr.rank();
   MatrixXd R = qr.matrixQR().triangularView<Upper>();
