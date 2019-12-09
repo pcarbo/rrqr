@@ -7,7 +7,7 @@
 using namespace Rcpp;
 
 // rrqr_rcpp
-double rrqr_rcpp(const NumericMatrix& x);
+List rrqr_rcpp(const NumericMatrix& x);
 RcppExport SEXP _rrqr_rrqr_rcpp(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
